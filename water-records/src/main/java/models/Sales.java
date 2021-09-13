@@ -68,12 +68,14 @@ public class Sales {
         this.emptyBottlesSold = emptyBottlesSold;
     }
 
-    public void getTotalSales() {
+    public int getTotalSales() {
         this.totalSales = this.mpesaSales + this.cashSales;
+        return totalSales;
     }
 
-    public void getExpectedTotalSales() {
+    public int getExpectedTotalSales() {
         this.expectedTotalSales = this.litresSold * this.price;
+        return expectedTotalSales;
     }
 
     public String getMachineImage() {
