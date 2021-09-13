@@ -24,7 +24,6 @@ public class Sql2oSalesDao implements SalesDao {
                     .executeUpdate()
                     .getKey();
             sales.setId(id);
-
         }catch (Sql2oException ex){
             System.out.println(ex);
         }

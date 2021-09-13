@@ -7,7 +7,7 @@ import java.util.List;
 public interface ExpensesDao {
 
     //create
-    void add(ExpensesDao bedRoom);
+    void add(Expenses expenses);
 
     //read
     List<Expenses> getAll();
