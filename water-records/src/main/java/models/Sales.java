@@ -15,9 +15,10 @@ public class Sales {
     private int expectedTotalSales;
     private int balance;
     private int price;
+    private int expensesId;
     private int id;
 
-    public Sales(Timestamp date, int cashSales, int mpesaSales, int litresSold, int emptyBottlesSold, String machineImage, boolean isWaterRefilled, int balance) {
+    public Sales(Timestamp date, int cashSales, int mpesaSales, int litresSold, int emptyBottlesSold, String machineImage, boolean isWaterRefilled, int balance, int expensesId) {
         this.date = date;
         this.cashSales = cashSales;
         this.mpesaSales = mpesaSales;
@@ -26,6 +27,15 @@ public class Sales {
         this.balance = balance;
         this.machineImage = machineImage;
         this.isWaterRefilled = isWaterRefilled;
+        this.expensesId = expensesId;
+    }
+
+    public int getExpensesId() {
+        return expensesId;
+    }
+
+    public void setExpensesId(int expensesId) {
+        this.expensesId = expensesId;
     }
 
     public Timestamp getDate() {
@@ -124,6 +134,7 @@ public class Sales {
                 expectedTotalSales == sales.expectedTotalSales &&
                 balance == sales.balance &&
                 price == sales.price &&
+                expensesId == sales.expensesId &&
                 id == sales.id &&
                 date.equals(sales.date) &&
                 machineImage.equals(sales.machineImage);
@@ -131,6 +142,6 @@ public class Sales {
 
     @Override
     public int hashCode() {
-        return Objects.hash(date, cashSales, mpesaSales, litresSold, emptyBottlesSold, totalSales, machineImage, isWaterRefilled, expectedTotalSales, balance, price, id);
+        return Objects.hash(date, cashSales, mpesaSales, litresSold, emptyBottlesSold, totalSales, machineImage, isWaterRefilled, expectedTotalSales, balance, price, expensesId, id);
     }
 }

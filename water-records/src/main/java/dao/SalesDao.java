@@ -11,6 +11,7 @@ public interface SalesDao {
 
     //read
     List<Sales> getAll();
+
     Sales findById(int id);
 
     //delete

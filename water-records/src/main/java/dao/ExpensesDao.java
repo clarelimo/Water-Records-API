@@ -11,6 +11,7 @@ public interface ExpensesDao {
 
     //read
     List<Expenses> getAll();
+    List<Expenses> getAllExpenseForASale(int salesId);
     Expenses findById(int id);
 
     //delete
