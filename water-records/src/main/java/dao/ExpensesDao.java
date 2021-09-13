@@ -1,17 +1,17 @@
 package dao;
 
 import models.Expenses;
-import models.Sales;
 
 import java.util.List;
 
-public interface SalesDao {
+public interface ExpensesDao {
+
     //create
-    void add(Sales sales);
+    void add(ExpensesDao bedRoom);
 
     //read
-    List<Sales> getAll();
-    Sales findById(int id);
+    List<Expenses> getAll();
+    Expenses findById(int id);
 
     //delete
     void deleteById(int id);
