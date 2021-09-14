@@ -11,14 +11,12 @@ public class Sales {
     private int emptyBottlesSold;
     private int totalSales;
     private String machineImage;
-    private boolean isWaterRefilled;
     private int expectedTotalSales;
     private int balance;
     private int price;
-    private int expensesId;
     private int id;
 
-    public Sales(Timestamp date, int cashSales, int mpesaSales, int litresSold, int emptyBottlesSold, String machineImage, boolean isWaterRefilled, int balance) {
+    public Sales(Timestamp date, int cashSales, int mpesaSales, int litresSold, int emptyBottlesSold, String machineImage, int balance) {
         this.date = date;
         this.cashSales = cashSales;
         this.mpesaSales = mpesaSales;
@@ -26,16 +24,6 @@ public class Sales {
         this.emptyBottlesSold = emptyBottlesSold;
         this.balance = balance;
         this.machineImage = machineImage;
-        this.isWaterRefilled = isWaterRefilled;
-        this.expensesId = expensesId;
-    }
-
-    public int getExpensesId() {
-        return expensesId;
-    }
-
-    public void setExpensesId(int expensesId) {
-        this.expensesId = expensesId;
     }
 
     public Timestamp getDate() {
@@ -96,14 +84,6 @@ public class Sales {
         this.machineImage = machineImage;
     }
 
-    public boolean isWaterRefilled() {
-        return isWaterRefilled;
-    }
-
-    public void setWaterRefilled(boolean waterRefilled) {
-        isWaterRefilled = waterRefilled;
-    }
-
     public int getId() {
         return id;
     }
@@ -130,11 +110,9 @@ public class Sales {
                 litresSold == sales.litresSold &&
                 emptyBottlesSold == sales.emptyBottlesSold &&
                 totalSales == sales.totalSales &&
-                isWaterRefilled == sales.isWaterRefilled &&
                 expectedTotalSales == sales.expectedTotalSales &&
                 balance == sales.balance &&
                 price == sales.price &&
-                expensesId == sales.expensesId &&
                 id == sales.id &&
                 date.equals(sales.date) &&
                 machineImage.equals(sales.machineImage);
@@ -142,6 +120,6 @@ public class Sales {
 
     @Override
     public int hashCode() {
-        return Objects.hash(date, cashSales, mpesaSales, litresSold, emptyBottlesSold, totalSales, machineImage, isWaterRefilled, expectedTotalSales, balance, price, expensesId, id);
+        return Objects.hash(date, cashSales, mpesaSales, litresSold, emptyBottlesSold, totalSales, machineImage, expectedTotalSales, balance, price, id);
     }
 }

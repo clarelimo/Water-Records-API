@@ -17,7 +17,7 @@ public class Sql2oSalesDao implements SalesDao {
     }
     @Override
     public void add(Sales sales) {
-        String sql = "INSERT INTO sales (date,cashsales,mpesasales,litressold,emptybottlessold, machineimage,iswaterrefilled,balance) VALUES(:date,:cashSales,:mpesaSales,:litresSold,:emptyBottlesSold, :machineImage,:isWaterRefilled,:balance)";
+        String sql = "INSERT INTO sales (date,cashsales,mpesasales,litressold,emptybottlessold, machineimage,balance) VALUES(:date,:cashSales,:mpesaSales,:litresSold,:emptyBottlesSold, :machineImage,:balance)";
         try (Connection conn = sql2o.open()){
             int id = (int) conn.createQuery(sql,true)
                     .bind(sales)
