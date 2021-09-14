@@ -66,7 +66,7 @@ public class Sql2oSalesDaoTest {
     }
 
     public Sales setupSales(){
-        Sales sales = new Sales(new Timestamp(new Date().getDay()), 700,300, 200,0,"my image",false,50,1);
+        Sales sales = new Sales(new Timestamp(new Date().getDay()), 700,300, 200,0,"my image",false,50);
         salesDao.add(sales);
 
         return  sales;

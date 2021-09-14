@@ -18,7 +18,7 @@ public class Sales {
     private int expensesId;
     private int id;
 
-    public Sales(Timestamp date, int cashSales, int mpesaSales, int litresSold, int emptyBottlesSold, String machineImage, boolean isWaterRefilled, int balance, int expensesId) {
+    public Sales(Timestamp date, int cashSales, int mpesaSales, int litresSold, int emptyBottlesSold, String machineImage, boolean isWaterRefilled, int balance) {
         this.date = date;
         this.cashSales = cashSales;
         this.mpesaSales = mpesaSales;
