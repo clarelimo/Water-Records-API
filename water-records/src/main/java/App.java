@@ -10,7 +10,16 @@ import org.sql2o.Connection;
 import static spark.Spark.*;
 
 public class App {
+    static int getHerokuAssignedPort() {
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        if (processBuilder.environment().get("PORT") != null) {
+            return Integer.parseInt(processBuilder.environment().get("PORT"));
+        }
+        return 4567;
+    }
     public static void main(String[] args) {
+        port(getHerokuAssignedPort());
+
         Sql2oSalesDao salesDao;
         Sql2oExpensesDao expensesDao;
         Sql2oUserDao userDao;
@@ -117,7 +126,6 @@ public class App {
             }
             return gson.toJson(salesId);
         });
-
 
         after((req, res) ->{
             res.type("application/json");

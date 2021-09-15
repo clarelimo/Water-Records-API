@@ -13,7 +13,7 @@ public class Sales {
     private String machineImage;
     private int expectedTotalSales;
     private int balance;
-    private int price;
+    private int price = 10;
     private int id;
 
     public Sales(Timestamp date, int cashSales, int mpesaSales, int litresSold, int emptyBottlesSold, String machineImage, int balance) {
@@ -66,14 +66,33 @@ public class Sales {
         this.emptyBottlesSold = emptyBottlesSold;
     }
 
-    public int getTotalSales() {
-        this.totalSales = this.mpesaSales + this.cashSales;
-        return totalSales;
-    }
+//    public int setTotalSales() {
+//        totalSales = mpesaSales + cashSales;
+//        return totalSales;
+//    }
 
     public int getExpectedTotalSales() {
-        this.expectedTotalSales = this.litresSold * this.price;
-        return expectedTotalSales;
+        return getPrice() * getLitresSold();
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setTotalSales(int totalSales) {
+        this.totalSales = totalSales;
+    }
+
+    public void setExpectedTotalSales(int expectedTotalSales) {
+        this.expectedTotalSales = expectedTotalSales;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public int getTotalSales() {
+        return getMpesaSales() + getCashSales();
     }
 
     public String getMachineImage() {
